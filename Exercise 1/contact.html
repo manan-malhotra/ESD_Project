@@ -17,6 +17,11 @@
 	font-weight: 300;
 	text-rendering: optimizeLegibility;
 }
+.asterick::after {
+	content: "*";
+	color: rgb(230, 126, 34);
+	font-size: 18px;
+}
 
 </style>
 <body>
@@ -40,10 +45,10 @@
                             <a href="profile.html" class="nav-link navoptions">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a  href="cart.html" class="nav-link navoptions active">Cart</a>
+                            <a  href="cart.html" class="nav-link navoptions">Cart</a>
                         </li>
                         <li class="nav-item">
-                            <a  href="contact.html" class="nav-link navoptions">Contact Us</a>
+                            <a  href="contact.html" class="nav-link navoptions active">Contact Us</a>
                         </li>
                     </ul>
                     
@@ -52,12 +57,53 @@
         </div>
     </header>
     
-    <main>
-        <div class="container">
-            <!-- Featured products with images, titles, and prices -->
-
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+            </div>
         </div>
-    </main>
+    <div 
+    style="
+    display: flex;
+    justify-content: center; " 
+    class="feature">
+        <h2 class="content-head pt-4">Contact Us</h2>
+    </div>
+      
+    <div class="container">
+        <div class="container">
+            <div class="form-elements">
+                <div class="form-group">
+                    <fieldset class="pure-group my-2">
+                        <label for="name"> Name<span class="asterick"></span></label>
+                        <input type="name" name="name"id="name" required class="form-control my-1" placeholder="Full Name">
+                    </fieldset>
+                    <fieldset class="pure-group my-2">
+                            <label for="email"> Email Address<span class="asterick"></span></label>
+                            <input type="email" name="email"id="email" required class="form-control " placeholder="name@example.com">
+                            <span class="email-invalid" style="display:none">
+                                Must be a valid email address</span>
+                    </fieldset>
+                    <fieldset class="pure-group my-2">
+                            <label for="number"> Contact Number</label>
+                            <input type="number" name="number" id="number" class="form-control" placeholder="Contact Number">
+                    </fieldset>
+                    <fieldset class="pure-group my-2">
+                            <label for="help"> How can we help you?<span class="asterick"></span></label>
+                            <textarea name="help" required id="help" class="form-control form-control-range"  rows="6"></textarea>
+                    </fieldset>
+                        <button type="submit" class="btn btn-lg my-3 btn-primary ">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+       
+    
+      
+    
+      
+    </body>
     
     <footer>
         <!-- Footer links and contact information -->
