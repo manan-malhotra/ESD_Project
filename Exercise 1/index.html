@@ -29,7 +29,29 @@
 	font-style: italic;
 	line-height: 185%;
 }
+.feature {
+    text-align: center;
+    margin: auto;
+}
 
+h5, h4, h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+.city img {
+    width: 100%;
+    height: 170px;
+}
+.prod img {
+    width: 100%;
+    height: 170px;
+}
+
+#festive{
+    
+    height: auto;
+    height: 113px;
+}
 </style>
 <body>
     <header class="heroheading">
@@ -49,14 +71,23 @@
                             <a href="shop.html" class="nav-link navoptions">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a href="profile.html" class="nav-link navoptions">Profile</a>
+                            <a href="contact.html" class="nav-link navoptions">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a  href="cart.html" class="nav-link navoptions">Cart</a>
+                            <a style="
+                            transform: translateY(-4px);
+                        " href="profile.html" class="nav-link navoptions">
+                                <img src="resources/img/user.svg" alt="">
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a  href="contact.html" class="nav-link navoptions">Contact Us</a>
+                            <a style="
+                            transform: translateY(-4px);
+                        " href="cart.html" class="nav-link navoptions">
+                                <img src="resources/img/cart.svg" alt="">
+                            </a>
                         </li>
+                        
                     </ul>
                     
                 </div>
@@ -64,13 +95,16 @@
         </div>
     </header>
     
-    <main>
+    <main style="
+    background: #343a40!important;
+    height: 270px;
+">
         <div class="container">
             <!-- Featured products with images, titles, and prices -->
             
             <div class="row mt-5">
                 <div class="col-md-10 offset-1 mt-5">
-                    <h1>
+                    <h1 >
                         <strong>Your Omni Shop.<br>For all your needs.</strong></h1>
                             <a href="shop.html" class="mr-2 mt-4  btn btn-lg btn-warning">Let's Shop</a>
                             <a href="profile.html" class="ml-2 mt-4 btn btn-lg btn-outline-warning">Show my profile</a>
@@ -78,10 +112,182 @@
             </div>
         </div>
     </main>
-    <section class="sectiontopsellers container">
+    <section class="sectiontopsellers">
         <div class="products">
-            <div style="height: 700px;"></div>
+            <div style="">
+                
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                                <a href="shop.html">
+                                    <img src="resources/img/prod1.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                                <a href="shop.html">
+                                    <img src="resources/img/prod2.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                                <a href="shop.html">
+                                    <img src="resources/img/prod3.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                               <a href="shop.html">
+                                 <img src="resources/img/prod4.webp" alt="">
+                               </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                                <a href="shop.html">
+                                    <img src="resources/img/prod5.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                                <a href="shop.html">
+                                    <img src="resources/img/prod6.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                                <a href="shop.html">
+                                    <img src="resources/img/prod5.webp" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="container">
+                               <a href="shop.html">
+                                   <img src="resources/img/prod1.webp" alt="">
+                               </a>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
         </div>
+    </section>
+    <section class="cities" id="cities">
+        <div class="feature pt-5">
+            <h2>we’re currently in these cities</h2>
+        </div>
+            <div class="container-fluid">
+                <div class="card-deck ">
+                    <div class="col-xl-3 col-lg-5 offset-lg-1 offset-xl-0 col-sm-6 col-12 mb-3">
+                        <div class="card city">
+                            <img class="card-img-top" src="resources/img/agra.jpg">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    Agra
+                                </h3>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <ion-icon name="person" class="cityicon"></ion-icon>
+                                        <small> 900+ Happy Buyers</small>  
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="shield-checkmark" class="cityicon"></ion-icon>
+                                        <small> 70+ Top Sellers </small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="logo-twitter" class="cityicon"></ion-icon>
+                                        <small>@omnishop_agra</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-5 col-sm-6 col-12 mb-3">
+                        <div class="card city">
+                            <img class="card-img-top" src="resources/img/delhi.jpg">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    Delhi
+                                </h3>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <ion-icon name="person" class="cityicon"></ion-icon>
+                                        <small> 1600+ Happy Buyers</small>  
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="shield-checkmark" class="cityicon"></ion-icon>
+                                        <small> 90+ Top Sellers </small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="logo-twitter" class="cityicon"></ion-icon>
+                                        <small>@omnishop_delhi</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-5 offset-lg-1 offset-xl-0 col-sm-6 col-12 mb-3">
+                        <div class="card city">
+                            <img class="card-img-top" src="resources/img/mumbai2.jpg">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    Mumbai
+                                </h3>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <ion-icon name="person" class="cityicon"></ion-icon>
+                                        <small> 1900+ Happy Buyers</small>  
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="shield-checkmark" class="cityicon"></ion-icon>
+                                        <small> 120+ Top Sellers </small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="logo-twitter" class="cityicon"></ion-icon>
+                                        <small>@omnishop_mumbai</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-5 col-sm-6 col-12 mb-3">
+                        <div class="card city">
+                            <img class="card-img-top" src="resources/img/chennai.jpg">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    Chennai
+                                </h3>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <ion-icon name="person" class="cityicon"></ion-icon>
+                                        <small> 700+ Happy Buyers</small>  
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="shield-checkmark" class="cityicon"></ion-icon>
+                                        <small> 60+ Top Sellers </small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <ion-icon name="logo-twitter" class="cityicon"></ion-icon>
+                                        <small>@omnishop_chennai</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
     </section>
     <section class="sectioncustomers container">
         <div class="customers">
@@ -130,5 +336,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
