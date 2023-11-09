@@ -111,4 +111,101 @@ h5, h4, h2 {
 .product-section .product-item:hover .icon-cross {
       bottom: 0;
       opacity: 1;
-      visibility: visible; }
+      visibility: visible; 
+    }
+
+ /* Product Color */
+ .product{
+    margin-bottom: 125px !important;
+ }
+ .product-color {
+    margin-bottom: 30px;
+  }
+  .product-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+ 
+.product-description h1 {
+    font-weight: 300;
+    font-size: 52px;
+ margin: 25px 0px;
+    letter-spacing: -2px;
+}
+  .color-choose div {
+    display: inline-block;
+  }
+   
+  .color-choose input[type="radio"] {
+    display: none;
+  }
+   
+  .color-choose input[type="radio"] + label span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+  }
+   
+  .color-choose input[type="radio"]#teal + label span {
+    background-color: #234b59;
+  }
+  .color-choose input[type="radio"]#blue + label span {
+    background-color: #314780;
+  }
+  .color-choose input[type="radio"]#black + label span {
+    background-color: #323232;
+  }
+   
+  .color-choose input[type="radio"]:checked + label span {
+    background-image: url(./resources/css/img/check-icn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .product-color {
+    margin-bottom: 30px;
+  }
+   
+  .color-choose div {
+    display: inline-block;
+  }
+   
+  .color-choose input[type="radio"] {
+    display: none;
+  }
+   
+  .color-choose input[type="radio"] + label span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+  }
+   
+ 
+   
+  .left-column img {
+    opacity: 0;
+    display: none;
+    transition: all 0.3s ease;
+    max-width: 55%;
+  }
+   
+  .left-column img.current {
+    display: inline;
+    opacity: 1;
+    
+  }
+  
