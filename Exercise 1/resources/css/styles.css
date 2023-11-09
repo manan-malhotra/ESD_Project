@@ -1,3 +1,7 @@
+main{
+    background: #343a40 !important;
+    height: 170px;
+}
 body {
 	font-size: 20px;
 	background-color: #343a40;
@@ -208,4 +212,26 @@ h5, h4, h2 {
     opacity: 1;
     
   }
-  
+  .footericon {
+    font-size: 140%;
+    margin-left: 20px;
+    margin-top: 40px;
+    color: rgb(134, 132, 132);
+  }
+  .footericon:hover {
+    text-decoration: none;
+    transform: scale(1.04);
+  }
+  footer a:hover {
+    text-decoration: none;
+    transform: scale(1.02);
+  }
+  footer {
+    background-color: rgb(39, 39, 39);
+    padding-bottom: 0%;
+    height: 38vh;
+  }
+  .copyright {
+    font-size: 60%;
+    text-align: center;
+  }  
