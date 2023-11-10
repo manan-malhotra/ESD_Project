@@ -19,8 +19,28 @@
                 $(this).addClass('current');
             });
         });
+        function changeText(n){
+            for(var i=0;i<n;i++){
+                document.getElementsByClassName('test')[i].name = 'star';
+            }
+            for(var i=n;i<5;i++){
+                document.getElementsByClassName('test')[i].name = 'star-outline';
+            }
+        }
     </script>
     <style>
+        ::placeholder{
+            font-size: 20px;
+            color: rgb(85, 83, 83);
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+        }
+        textarea{
+            font-size: 20px;
+            color: rgb(44, 43, 43);
+            font-family: "Lato", sans-serif;
+            font-weight: 500;
+        }
         /* Product Color */
         .color-choose input[type="radio"]#teal+label span {
             background-color: #17343c;
@@ -121,16 +141,75 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="mt-3 product-price">
-                                    <span>₹349.00</span>
+                                <div class="row">
+
+                                    <div class="mt-3 product-price col-6">
+                                        <span>₹349.00</span>
+                                    </div>
+                                    <div class="col-6" style="padding-top: 15px;">
+                                        <ion-icon class="gold" name="star"></ion-icon>
+                                        <ion-icon class="gold" name="star"></ion-icon>
+                                        <ion-icon class="gold" name="star"></ion-icon>
+                                        <ion-icon class="gold" name="star-half"></ion-icon>
+                                        <ion-icon class="gold" name="star-outline"></ion-icon>
+                                    </div>
                                 </div>
                                 <div class="mt-3">
                                     <a href="cart.html" class="btn btn-black btn-lg btn-warning">Add to cart</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="product-ratings">
+                            <div class="row">
+
+                                <div class="mt-3  col-6">
+                                    <a href="">
+                                        <span>REVIEWS(23)</span>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- TODO: Review section -->
+        <section class="ratings">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <span>
+                                    <h5>Add Ratings:</h5>
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <ion-icon onclick="changeText(1)" class="test gold" name="star-outline"></ion-icon>
+                                <ion-icon onclick="changeText(2)" class="test gold" name="star-outline"></ion-icon>
+                                <ion-icon onclick="changeText(3)" class="test gold" name="star-outline"></ion-icon>
+                                <ion-icon onclick="changeText(4)" class="test gold" name="star-outline"></ion-icon>
+                                <ion-icon onclick="changeText(5)" class="test gold" name="star-outline"></ion-icon>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <span>
+                                    <h5>Add Reviews:</h5>
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <textarea name="review" placeholder="What did you think of the product?" id="" cols="30" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </section>
         <!-- Start Why Choose Us Section -->

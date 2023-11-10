@@ -235,3 +235,15 @@ h5, h4, h2 {
     font-size: 60%;
     text-align: center;
   }  
+  .gold{
+    color: #ffc008;
+  }
+
+  .product-ratings{
+    font-size: 18px;
+  }
+
+  .product-ratings a:hover{
+    text-decoration: none;
+    color: white;
+  }
