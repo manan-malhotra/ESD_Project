@@ -2,6 +2,10 @@ main{
     background: #343a40 !important;
     height: 170px;
 }
+main .containerb{
+  height: 130px;
+  border-bottom: 1px solid gray;
+}
 body {
 	font-size: 20px;
 	background-color: #343a40;
@@ -30,6 +34,10 @@ body {
 h5, h4, h2 {
     text-transform: uppercase;
     text-align: center;
+}
+h6{
+  text-transform: uppercase;
+  padding: 5px;
 }
 .city img {
     width: 100%;
@@ -246,4 +254,29 @@ h5, h4, h2 {
   .product-ratings a:hover{
     text-decoration: none;
     color: white;
+  }
+  .recent-orders .container{
+    border-top: 1px solid gray;
+  }
+  .box{
+    width: -webkit-fill-available;
+  }
+  .box:hover a:hover{
+    /* transition: .3s all ease; */
+    text-decoration: none !important;
+    /* transform: translateY(-10px); */
+    
+  }
+  .box-upper{
+    border: 1px #D5D9D9 solid;
+    background-color: #F0F2F2!important;
+    border-radius: 8px 8px 0 0;
+  }
+  .box-lower{
+    border: 1px #D5D9D9 solid;
+    background-color: #fff!important;
+    border-radius: 0 0 8px 8px;
+  }
+  .order-thumbnail{
+    width: 100%;
   }
