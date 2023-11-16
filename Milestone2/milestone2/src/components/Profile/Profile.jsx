@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Main from '../Main/Main'
 function Profile() {
   return (
-    <div>Profile</div>
+    <>
+		<Main name="Profile" />
+    </>
   )
 }
 

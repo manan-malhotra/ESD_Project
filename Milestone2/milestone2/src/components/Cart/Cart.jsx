@@ -1,8 +1,11 @@
 import React from 'react'
+import Main from '../Main/Main'
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <>
+      <Main name="Cart" />
+    </>
   )
 }
 
