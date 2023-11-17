@@ -1,15 +1,16 @@
 import React from 'react'
 import Main from '../Main/Main'
 import Product from './Product'
+import WhyChooseUs from '../WhyChooseUs/WhyChooseUs'
 
 function Shop() {
   return (
     <>
 		<Main name="Shop" />
-		<section class="product-section">
-        <div class="container">
+		<section className="product-section">
+        <div className="container">
 
-            <div class="row">
+            <div className="row">
                 {/* <!-- Start Column 1 --> */}
                     <Product name="cart1" product="Casual T-shirt" price="349.00"/>
 					{/* <!-- End Column 1 --> */}
@@ -39,6 +40,7 @@ function Shop() {
         </div>
 
     </section>
+	<WhyChooseUs/>
     </>
   )
 }

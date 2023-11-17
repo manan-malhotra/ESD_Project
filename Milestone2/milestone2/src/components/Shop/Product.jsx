@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom'
 
 function Product({name,product,price}) {
   return (
-    <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <Link class="product-item" to={"./product/"+name+"/"+product}>
-            <img src={"../public/"+name+".jpg"} class="img-fluid product-thumbnail2" />
-            <h3 class="product-title">{product}</h3>
-            <strong class="product-price">₹{price}</strong>
-            <span class="icon-cross">
-                <img src={"../public/cross.svg"}  class="img-fluid" alt="" />
+    <div className="col-12 col-md-4 col-lg-3 mb-5">
+        <Link className="product-item" to={"./product/"+name+""}>
+            <img src={"../public/"+name+".jpg"} className="img-fluid product-thumbnail2" />
+            <h3 className="product-title">{product}</h3>
+            <strong className="product-price">₹{price}</strong>
+            <span className="icon-cross">
+                <img src={"../public/cross.svg"}  className="img-fluid" alt="" />
             </span>
         </Link>
     </div>
