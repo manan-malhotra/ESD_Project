@@ -8,6 +8,7 @@ function Display() {
 const { id} = useParams();
     const [data, setData] = React.useState('')
     const fetchData = () => {
+        window.scrollTo(0,0);
         api.getData()
         .then((response)=>{
             console.log(response.data[id])
