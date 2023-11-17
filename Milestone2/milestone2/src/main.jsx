@@ -9,14 +9,16 @@ import Cart from './components/Cart/Cart';
 import Contact from './components/Contact/Contact';
 import Profile from './components/Profile/Profile';
 import Shop from './components/Shop/Shop';
+import ProductPage from './components/Product/ProductPage.jsx';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<Layout/>}>
             <Route path='' element={<App/>}/>
             <Route path='home' element={<App/>}/>
-            <Route path='shop' element={<Shop/>}>
-                {/* <Route path=':id' element={<h3>TEST</h3>}/> */}
+            <Route path='shop/' element={<Shop/>}></Route>
+            <Route path='shop/product/'>
+                  <Route path=':id/:name' element={<ProductPage/>} />
             </Route>
             <Route path='contact' element={<Contact/>}/>
             <Route path='profile' element={<Profile/>}/>
