@@ -14,7 +14,7 @@ function NotFound() {
             <Link className='return' to="/home">Return Home</Link>
             </div>
             <div className="col-4">
-            <img className='notimg  d-lg-block ' src={"../public/404_files/03.png"} alt="" />
+            <img className='notimg  d-lg-block ' src={"../public/03.png"} alt="" />
             </div>
             </div>
         </div>
