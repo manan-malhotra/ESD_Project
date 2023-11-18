@@ -10,6 +10,9 @@ const navigate = useNavigate();
 const { id} = useParams();
     const [data, setData] = React.useState('')
     const fetchData = () => {
+        if(Number(id.substring(4))>8){
+            navigate('/404',{replace: true});    
+        }
         window.scrollTo(0,0);
         api.getData()
         .then((response)=>{

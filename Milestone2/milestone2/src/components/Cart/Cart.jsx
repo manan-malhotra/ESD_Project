@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Main from '../Main/Main'
 import Item from './Item'
-import { Link } from 'react-router-dom'
 import cart from '../../services/cart'
 
 function Cart() {
-const [total, setTotal] = useState(1447)
-const id = "cart1";
+const [total, setTotal] = useState('')
 const fetchData = () => {
         window.scrollTo(0,0);
         cart.getPrice()
@@ -38,7 +36,7 @@ const fetchData = () => {
                 <form className="col-md-12" method="post">
                   <div className="site-blocks-table">
                     <table className="tr" >
-                      <thead>
+                      <thead className="d-none d-xl-block">
                         <tr>
                           <th className="table-product-thumbnail">Product</th>
                           <th className="table-product-name">Brand</th>
@@ -127,7 +125,7 @@ const fetchData = () => {
         
                       <div className="row">
                         <div className="col-md-12">
-                          <a className="btn btn-black btn-lg btn-warning" >Checkout</a>
+                          <a className="btn btn-black btn-lg btn-warning text-black" >Checkout</a>
                         </div>
                       </div>
                     </div>

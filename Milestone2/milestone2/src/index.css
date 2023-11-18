@@ -345,3 +345,18 @@ width: 13%;}
   .collapse{
     visibility: visible !important;
   }
+
+  .not-found{
+    height: 40vh;
+  }
+  .notimg{  
+  width: -webkit-fill-available;
+  }
+.return{
+  text-decoration: none;
+  color: #868484;
+}
+.return:hover{
+  text-decoration: none;
+  color: #868484;
+}

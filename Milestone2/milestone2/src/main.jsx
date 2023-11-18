@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact';
 import Profile from './components/Profile/Profile';
 import Shop from './components/Shop/Shop';
 import ProductPage from './components/Product/ProductPage.jsx';
+import NotFound from './components/NotFound/NotFound.jsx';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -17,13 +18,11 @@ const router = createBrowserRouter(
             <Route path='' element={<App/>}/>
             <Route path='home' element={<App/>}/>
             <Route path='shop/' element={<Shop/>}></Route>
-            <Route path='shop/product/'>
-                  <Route path=':id' element={<ProductPage/>} />
-            </Route>
+            <Route path='shop/product/:id' element={<ProductPage/>} />
             <Route path='contact' element={<Contact/>}/>
             <Route path='profile' element={<Profile/>}/>
             <Route path='cart' element={<Cart/>}/>
-            <Route path='*' element={<h2>404</h2>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Route>
 	)
 )
