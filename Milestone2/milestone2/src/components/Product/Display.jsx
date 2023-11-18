@@ -1,10 +1,12 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react';
 import Main from '../Main/Main';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
+import addCart from '../../services/addCart';
 function Display() {
+const navigate = useNavigate();
 const { id} = useParams();
     const [data, setData] = React.useState('')
     const fetchData = () => {
@@ -21,6 +23,11 @@ const { id} = useParams();
     useEffect(() => {
       fetchData();
    }, []);
+    function addCart2(){
+        console.log(id);
+        addCart.postData(id,1);
+        navigate('/cart',{replace: true});
+    }
   return (<>
     <Main name={data.brand+" "+ data.name}/>
             <section className="product mb-5">
@@ -40,7 +47,7 @@ const { id} = useParams();
                             <div className="row">
 
                                 <div className="mt-3 product-price col-6">
-                                    <span>₹349.00</span>
+                                    <span>₹{data.price}</span>
                                 </div>
                                 <div className="col-6 pt-3">
                                     <ion-icon class="gold" className="gold" name="star"></ion-icon>
@@ -51,7 +58,7 @@ const { id} = useParams();
                                 </div>
                             </div>
                             <div className="mt-3">
-                                <Link to="/cart" className="btn btn-black btn-lg btn-warning">Add to cart</Link>
+                                <button onClick={addCart2} className="btn btn-black btn-lg btn-warning">Add to cart</button>
                             </div>
                         </div>
                     </div>

@@ -103,6 +103,9 @@ display: block;
 .product-name{
 width: 22%;
 }
+button:focus{
+  box-shadow: none !important;
+}
 .table-product-thumbnail{
   width: 23%;
 }

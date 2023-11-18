@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Main from '../Main/Main'
 import Item from './Item'
+import { Link } from 'react-router-dom'
+import cart from '../../services/cart'
 
 function Cart() {
+const [total, setTotal] = useState(1447)
+const id = "cart1";
+const fetchData = () => {
+        window.scrollTo(0,0);
+        cart.getPrice()
+        .then((response)=>{
+            console.log(response.data)
+            setTotal(response.data.price)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+    useEffect(() => {
+      fetchData();
+   }, []);
+  
+  function sub(x){
+    setTotal(total-x);
+  }
+  function add(x){
+    setTotal(Number(total)+Number(x));
+  }
   return (
-    <>
+    <>    
+      {/* <h1>{data.cart1}</h1> */}
       <Main name="Cart" />
       <section className="cart-table">
         <div className="container">
@@ -23,17 +49,14 @@ function Cart() {
                         </tr>
                       </thead>
                       <tbody>
-                        <Item id="cart1"/>
-                        <Item id="cart2"/>
-                        <Item id="cart3"/>
-                        <Item id="cart4"/>
-                        <Item id="cart5"/>
-                        <Item id="cart6"/>
-                        <Item id="cart7"/>
-                        <Item id="cart8"/>
-                        
-                        
-        
+                        <Item id="cart1" subTotal={sub} addTotal={add}/>
+                        <Item id="cart2" subTotal={sub} addTotal={add}/>
+                        <Item id="cart3" subTotal={sub} addTotal={add}/>
+                        <Item id="cart4" subTotal={sub} addTotal={add}/>
+                        <Item id="cart5" subTotal={sub} addTotal={add}/>
+                        <Item id="cart6" subTotal={sub} addTotal={add}/>
+                        <Item id="cart7" subTotal={sub} addTotal={add}/>
+                        <Item id="cart8" subTotal={sub} addTotal={add}/>
                         <tr>
                           <td className="product-thumbnail">
                             <img style={{maxWidth: "0%"}} src="./public/cart2.jpg" alt="Image" className="img-fluid" />
@@ -48,14 +71,14 @@ function Cart() {
               </div>
               <div className="row mb-5">
                 <div className="col-md-6">
-                  <div className="row mb-5">
+                  {/* <div className="row mb-5">
                     <div className="col-md-6 mb-3 mb-md-0">
-                      <a href="index.html" className="btn btn-black btn-lg btn-warning">Update Cart</a>
+                      <Link to="/home" className="btn btn-black btn-lg btn-warning">Update Cart</Link>
                     </div>
                     <div className="col-md-6">
-                      <a href="shop.html" className="btn btn-outline-black btn-lg btn-light">Continue Shopping</a>
+                      <Link to="/shop" className="btn btn-outline-black btn-lg btn-light">Continue Shopping</Link>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="row">
                     <div className="col-md-12">
                       <label className="h4" htmlFor="coupon">Coupon</label>
@@ -82,7 +105,15 @@ function Cart() {
                           <span className="">Subtotal</span>
                         </div>
                         <div className="col-md-6 text-right">
-                          <strong className="">₹2546.00</strong>
+                          <strong className="">₹{(Number(total)).toFixed(2)}</strong>
+                        </div>
+                      </div>
+                      <div className="row mb-3">
+                        <div className="col-md-6">
+                          <span className="">Taxes</span>
+                        </div>
+                        <div className="col-md-6 text-right">
+                          <strong className="">₹{(Number(total)*0.1).toFixed(2)}</strong>
                         </div>
                       </div>
                       <div className="row mb-5">
@@ -90,7 +121,7 @@ function Cart() {
                           <span className="">Total</span>
                         </div>
                         <div className="col-md-6 text-right">
-                          <strong className="">₹2546.00</strong>
+                          <strong className="">₹{(Number(total)*1.1).toFixed(2)}</strong>
                         </div>
                       </div>
         
