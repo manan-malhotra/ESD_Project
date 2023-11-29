@@ -53,7 +53,7 @@ public class AuxController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping(path = "/{deptId}")
+    @GetMapping(path = "/dept/{deptId}")
     public ResponseEntity<?> getEmployeesByDeptId(@PathVariable("deptId") Long id){
 
         List<Employee> emp = auxService.getEmployeesByDeptId(id);

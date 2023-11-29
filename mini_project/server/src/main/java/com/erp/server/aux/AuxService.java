@@ -59,7 +59,9 @@ public class AuxService {
     public EmployeeSalary addEmpSalary(AuxEmployeeSalaryDTO employeeSalaryDTO){
         EmployeeSalary employeeSalary = new EmployeeSalary();
         Optional<Employee> employee = employeeRepository.findById(employeeSalaryDTO.getEmployeeId());
-        employee.ifPresent(employeeSalary::setEmployeeId);
+        if(employee.isPresent()){
+            employeeSalary.setEmployeeId(employee.get());
+        }
         employeeSalary.setAmount(employeeSalaryDTO.getAmount());
         employeeSalary.setDescription(employeeSalaryDTO.getDescription());
 //        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -70,6 +72,16 @@ public class AuxService {
     public List<Employee> getEmployeesByDeptId(Long id){
         List<Employee> employees = employeeRepository.findAllByDepartment_deptId(id);
         return employees;
+    }
+
+    public boolean authenticate(String email,String password){
+        Optional<Employee> employee = employeeRepository.findByEmail(email);
+        if(employee.isPresent()){
+            Employee employee1 = employee.get();
+            return password.equals(employee1.getPassword());
+        }else{
+            return false;
+        }
     }
 
 }
