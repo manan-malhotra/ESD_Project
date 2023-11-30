@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -82,6 +83,41 @@ public class AuxService {
         }else{
             return false;
         }
+    }
+
+    public AuxDetailsDTO findDetailsByEmail(String email){
+        AuxDetailsDTO auxDetailsDTO = new AuxDetailsDTO();
+        Optional<Employee> employee = employeeRepository.findByEmail(email);
+        if(employee.isPresent()){
+            Employee e = employee.get();
+            auxDetailsDTO.setEmail(email);
+            auxDetailsDTO.setFirstName(e.getFirstName());
+            auxDetailsDTO.setLastName(e.getLastName());
+            auxDetailsDTO.setDeptId(e.getDepartment().getDeptId());
+            auxDetailsDTO.setDeptName(e.getDepartment().getDeptName());
+            auxDetailsDTO.setEmployeeId(e.getEmployeeId());
+            Optional<EmployeeSalary> employeeSalary = employeeSalaryRepository.findByEmployee(auxDetailsDTO.getEmployeeId());
+            if(employeeSalary.isPresent()){
+                auxDetailsDTO.setAmount(employeeSalary.get().getAmount());
+            }else{
+                auxDetailsDTO.setAmount(0);
+            }
+        }
+        return auxDetailsDTO;
+    }
+    public List<AuxDetailsDTO> findDetailsByDept(String deptName){
+        List<AuxDetailsDTO> aux = new ArrayList<>();
+        Optional<Department> dept = departmentRepository.findByDeptName(deptName);
+        if(dept.isPresent()){
+            Department department = dept.get();
+            List<Employee> employees = getEmployeesByDeptId(department.getDeptId());
+            for(int i=0;i<employees.size();i++){
+                AuxDetailsDTO auxDetailsDTO = findDetailsByEmail(employees.get(i).getEmail());
+                aux.add(auxDetailsDTO);
+            }
+        }
+
+        return aux;
     }
 
 }

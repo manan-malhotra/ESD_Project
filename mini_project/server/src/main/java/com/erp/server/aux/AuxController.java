@@ -1,5 +1,6 @@
 package com.erp.server.aux;
 
+import com.erp.server.model.Department;
 import com.erp.server.model.Employee;
 import com.erp.server.repository.DepartmentRepository;
 import com.erp.server.repository.EmployeeRepository;
@@ -60,5 +61,34 @@ public class AuxController {
         return new ResponseEntity<>(emp,HttpStatus.OK);
 //        return new ResponseEntity<>(departmentRepository.findById(id).get().getEmployees().stream().map(employee -> employee.getEmployeeId()),HttpStatus.OK);
     }
+    @GetMapping(path = "/deptAll/{deptName}")
+    public ResponseEntity<?> getEmployeesByDeptId(@PathVariable("deptName") String deptName){
+        List<AuxDetailsDTO> aux = auxService.findDetailsByDept(deptName);
+        return new ResponseEntity<>(aux,HttpStatus.OK);
+    }
+    @GetMapping(path = "/employee/{email}")
+    public ResponseEntity<?> getAllEmployees(@PathVariable("email") String email){
+        Optional<Employee> employee = employeeRepository.findByEmail(email);
+        if(employee.isPresent()){
+            return new ResponseEntity<>(employee.get(),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping(path = "/details/{email}")
+    public ResponseEntity<?> getDetailsByEmail(@PathVariable ("email") String email){
+        Optional<Employee> employee = employeeRepository.findByEmail(email);
+        if(employee.isPresent()){
+            AuxDetailsDTO auxDetailsDTO = auxService.findDetailsByEmail(email);
+            return new ResponseEntity<>(auxDetailsDTO,HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+
+
 
 }
